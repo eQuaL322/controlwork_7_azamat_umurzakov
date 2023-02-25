@@ -8,13 +8,14 @@
                     <div class="container d-flex row justify-content-between">
                         <h5 class="d-inline mr-5">{{ record.author_name }}
                             ({{ record.author_email }})</h5>
-
                         <div class="d-inline">
                             <p class="d-inline mr-1">
-                                <a href="{% url 'update_guest_view' record.pk %}"><i class="bi bi-pencil-square"></i></a>
+                                <a href="{% url 'update_guest_view' record.pk %}"><i
+                                        class="bi bi-pencil-square"></i></a>
                             </p>
                             <p class="d-inline">
-                                <a href=""><i class="bi bi-file-earmark-minus"></i></a>
+                                <a href="{% url 'delete_guest_view' record.pk %}"><i
+                                        class="bi bi-file-earmark-minus"></i></a>
                             </p>
                         </div>
                     </div>

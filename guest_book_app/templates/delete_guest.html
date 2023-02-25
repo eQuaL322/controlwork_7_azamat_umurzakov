@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Удаление записи{% endblock %}
+{% block content %}
+    <div class="container d-flex flex-column align-items-center">
+        <h2 class="my-5">Вы точно хотите удалить запись?</h2>
+        <p class="mt-5">Имя: {{ guest.author_name }}</p>
+        <p>Описание: {{ guest.description }}</p>
+        <form action="{% url 'delete_confirm_guest' guest.pk %}" method="post">
+            {% csrf_token %}
+            <p class="d-inline"><input class="btn btn-primary" type="submit" value="Да"></p>
+            <p class="d-inline"><a class="btn btn-primary" href="{% url 'index' %}">Нет</a></p>
+        </form>
+    </div>
+{% endblock %}

@@ -46,3 +46,14 @@ def update_guest_view(request, pk):
         'guest': guest,
         'errors': errors,
     })
+
+
+def delete_guest_view(request, pk):
+    guest = get_object_or_404(GuestBook, pk=pk)
+    return render(request, 'delete_guest.html', context={'guest': guest})
+
+
+def delete_confirm_guest(request, pk):
+    task = get_object_or_404(GuestBook, pk=pk)
+    task.delete()
+    return redirect('index')
