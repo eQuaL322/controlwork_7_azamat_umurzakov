@@ -7,7 +7,7 @@ class GuestBookAdmin(admin.ModelAdmin):
     list_display = ('id', 'author_name', 'author_email', 'description', 'created_at', 'modified_at', 'status')
     list_filter = ('id', 'author_name', 'author_email', 'status')
     search_fields = ('author_name', 'author_email', 'description')
-    fields = ('author_name', 'author_email', 'description', 'created_at', 'modified_at', 'status')
+    fields = ('author_name', 'author_email', 'description', 'status')
 
 
 admin.site.register(GuestBook, GuestBookAdmin)
