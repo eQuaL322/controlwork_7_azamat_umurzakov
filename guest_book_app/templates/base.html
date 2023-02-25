@@ -11,12 +11,14 @@
 </head>
 <body>
 <nav class="navbar">
-    <div class="container">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                <a href="{% url 'index' %}"
-                   class="list-group-item mx-1">Главная</a>
+    <div class="container mt-2">
+        <ul>
+            <li class="d-inline mr-4">
+                <a href="{% url 'index' %}">Главная</a>
                 {% block menu %}{% endblock %}
+            </li>
+            <li class="d-inline">
+                <a href="{% url 'add_guest' %}">Добавить запись</a>
             </li>
         </ul>
     </div>

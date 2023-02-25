@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Добавить новую запись{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row mt-5 text-center">
+            <h2>Добавить новую запись</h2>
+        </div>
+        <form action="{% url 'add_guest' %}" method="post">
+        {% include 'partial/guest_form.html' with button_text='Добавить' %}
+        </form>
+    </div>
+{% endblock %}
